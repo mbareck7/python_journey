@@ -1,16 +1,22 @@
-# This is a sample Python script.
+def chapter1():
+    p = (3,7)
+    x,y = p
+    print("x: " + str(x))
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    person = ["Mohamed","Developer",(1,1,1995)]
+    name,job,birth = person
+    print("name: " + name)
 
+    # star expressions
+    print("********* star expressions *************")
+    data = ["somename", "many", "others", "information"]
+    name, *others = data
+    print("name: ", name)
+    print(others)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    line = "somename:x:1000:1000:mbareck,,,:/home/mbareck:/bin/bash"
+    name,_,*_,shell = line.split(":")
+    print("name: " + name + ", shell: " + shell)
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('Mohamed Said MBareck')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    chapter1()
