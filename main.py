@@ -24,5 +24,9 @@ def chapter1():
     import heapq
     nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
     print(heapq.nlargest(3,nums),"heapq.nlargest")
+
+
+    #1.5 priority queue
+    q = PriorityQueue()
 if __name__ == '__main__':
     chapter1()
