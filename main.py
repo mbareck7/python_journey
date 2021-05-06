@@ -18,5 +18,11 @@ def chapter1():
     name,_,*_,shell = line.split(":")
     print("name: " + name + ", shell: " + shell)
 
+
+    #1.4 n largest or smallest items
+    print("\n\n\n*********n largest or smallest items *************")
+    import heapq
+    nums = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+    print(heapq.nlargest(3,nums),"heapq.nlargest")
 if __name__ == '__main__':
     chapter1()
