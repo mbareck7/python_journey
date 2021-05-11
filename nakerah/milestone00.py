@@ -17,6 +17,14 @@ def set_normal_user(d):
 def format_output(l):
 	return json.dumps(l, indent=4)
 
+def prepare_data(f):#return list
+	res = []
+	lines = open(f,'r')
+	for l in lines:
+		res.append(l.rstrip()) #
+	lines.close()
+	return res
+
 def treat_line(l):
 	data = l.split(":")
 	res = {"user_name":data[0],"user_id":data[2],"home_dir":data[5],"login_shell":data[6],"normal_user":False}
@@ -37,8 +45,7 @@ def milestone00(users):
 # 	os.system("sed 's/,/,\n/g; s/},/\n},/g; s/\\n//g' results.txt")
 
 def main():
-	passwd = open("milestone_00.txt","r")
-	users = passwd.readlines()
+	users = prepare_data("milestone_00.txt")
 	print(format_output(milestone00(users)))
 
 if __name__ == '__main__':
