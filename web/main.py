@@ -38,5 +38,11 @@ def profile(username):
 def login(user=None):
     return render_template('user.html', user=user)
 
+# Passing objects into templates
+@app.route('/lang')
+def lang():
+    lang = ['Arabic', 'French', 'English', 'Spanish']
+    return render_template('lang.html',lang=lang)
+
 if __name__ == '__main__':
     app.run(debug=True)
