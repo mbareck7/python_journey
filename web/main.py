@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -28,6 +28,12 @@ def http2():
         return 'This is a POST method'
     else:
         return 'This is probably a GET method'
+    
+# HTML templates
+
+@app.route('/profile/<username>')
+def profile(username):
+    return render_template('profile.html', username=username)
 
 if __name__ == '__main__':
     app.run(debug=True)
